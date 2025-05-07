@@ -10,11 +10,11 @@ import AudioToolbox
 
 @MainActor
 public class SystemSoundManager {
-    static let shared: SystemSoundManager = SystemSoundManager()
+    public static let shared: SystemSoundManager = SystemSoundManager()
     
     private var soundID: SystemSoundID = 0
     
-    func play(_ sound: SystemSound, vibrate: Bool = false) {
+    public func play(_ sound: SystemSound, vibrate: Bool = false) {
         if let url = CFBundleCopyResourceURL(CFBundleGetMainBundle(), nil, nil, nil) {
             AudioServicesCreateSystemSoundID(url as CFURL, &soundID)
             if vibrate {
@@ -26,7 +26,7 @@ public class SystemSoundManager {
         }
     }
     
-    func vibrate() {
+    public func vibrate() {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
 }
