@@ -9,7 +9,7 @@ import Foundation
 import AudioToolbox
 
 extension SystemSound {
-    var id: Int {
+    public var id: Int {
         switch self {
         case .ringback_tone_ansi: return 30
         case .ringback_tone_cept: return 31

@@ -9,7 +9,7 @@ import Foundation
 import AudioToolbox
 
 extension SystemSound {
-    var path: String {
+    public var path: String {
         switch self {
         case .ringback_tone_ansi: return "/System/Library/Audio/UISounds/nano/ringback_tone_ansi.caf"
         case .ringback_tone_cept: return "/System/Library/Audio/UISounds/nano/ringback_tone_cept.caf"
